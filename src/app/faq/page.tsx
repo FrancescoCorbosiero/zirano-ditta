@@ -17,16 +17,7 @@ export default function FaqPage() {
   return (
     <>
       <JsonLd data={faqGraph(FAQ_GROUPS.flatMap((g) => [...g.items]))} />
-      <PageHero
-        n="06"
-        label="Domande frequenti"
-        trail={[{ name: 'Domande frequenti', href: '/faq' }]}
-        title={
-          <>
-            Le risposte, <em>prima delle domande.</em>
-          </>
-        }
-      >
+      <PageHero trail={[{ name: 'Domande frequenti', href: '/faq' }]} title="Le risposte, prima delle domande.">
         <p className="lead">Non trovi la tua? Chiamaci: una telefonata chiarisce più di dieci email.</p>
         <div>
           <Button href={SITE.phone.href} variant="glass">
@@ -39,7 +30,7 @@ export default function FaqPage() {
           {FAQ_GROUPS.map((g, i) => (
             <div key={g.title} className="grid gap-x-12 gap-y-8 lg:grid-cols-12">
               <div className="lg:col-span-4">
-                <span className="mono text-[var(--accent)]">{pad(i + 1)}</span>
+                <span className="meta text-[var(--accent)]">{pad(i + 1)}</span>
                 <h2 className="h3 mt-3" data-reveal>
                   {g.title}
                 </h2>

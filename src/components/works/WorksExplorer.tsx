@@ -58,17 +58,17 @@ export default function WorksExplorer() {
               <Link href={`/lavori/${w.slug}`} data-cursor="Apri" className="group block">
                 <div data-tilt className="relative">
                   <div className="frame" style={{ aspectRatio: filter === 'tutti' && i % 3 === 0 ? '4 / 4.6' : '16 / 11' }}>
-                    <Image src={m.src} alt={m.alt} fill sizes="(min-width: 768px) 50vw, 100vw" unoptimized priority={i < 2} className="zoom" />
+                    <Image src={m.src} alt={m.alt} fill sizes="(min-width: 768px) 50vw, 100vw" unoptimized {...(i < 2 ? { loading: 'eager' as const, fetchPriority: 'high' as const } : {})} className="zoom" />
                     <span className="glare" />
                     <span className="tag-glass">
-                      <span className="mono">{w.tags[0]}</span>
+                      <span className="meta">{w.tags[0]}</span>
                     </span>
                   </div>
                 </div>
                 <div className="mt-5 grid grid-cols-[auto_1fr_auto] items-baseline gap-x-4">
-                  <span className="mono text-[var(--accent)]">{pad(i + 1)}</span>
+                  <span className="meta text-[var(--accent)]">{pad(i + 1)}</span>
                   <h2 className="h3">{w.title}</h2>
-                  <span className="mono text-[var(--fg-mute)]">
+                  <span className="meta text-[var(--fg-mute)]">
                     {w.place} · {w.year}
                   </span>
                   <p className="col-span-2 col-start-2 mt-2 max-w-[48ch] text-[15px] text-[var(--fg-soft)]">{w.summary}</p>

@@ -1,55 +1,51 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
+import Dim from './Dim';
 
 /**
- * Testata delle pagine interne: fascia notturna con griglia, briciole,
- * numero di tavola e titolo grande. `aside` ospita ciò che sta a destra
- * (testo, bottoni, un cartiglio).
+ * Testata delle pagine interne: fascia notturna con griglia. Il percorso
+ * in alto a sinistra, il titolo grande allineato a destra, il testo e i
+ * bottoni in basso a sinistra: una diagonale, non la solita colonna.
+ * Una linea di quota lega il testo al bordo destro.
  */
 export default function PageHero({
-  n,
-  label,
   title,
   children,
   trail = [],
   bottom,
 }: {
-  n: string;
-  label: string;
   title: ReactNode;
   children?: ReactNode;
   trail?: { name: string; href: string }[];
   bottom?: ReactNode;
 }) {
   return (
-    <section data-hero className="tone-dark relative overflow-hidden pt-[132px] lg:pt-[168px]">
+    <section data-hero className="tone-dark relative overflow-hidden pt-[124px] lg:pt-[150px]">
       <div className="grid-plan" />
       <div className="wrap relative">
-        <nav aria-label="Percorso" className="mono flex flex-wrap gap-x-2.5 text-[var(--fg-mute)]" data-hero-fade>
+        <nav aria-label="Percorso" className="meta flex flex-wrap gap-x-2 text-[var(--fg-mute)]" data-hero-fade>
           <Link href="/" className="hover:text-[var(--fg)]">
             Home
           </Link>
-          {trail.map((t) => (
-            <span key={t.href} className="flex gap-2.5">
+          {trail.map((t, i) => (
+            <span key={t.href} className="flex gap-2">
               <span aria-hidden>/</span>
-              <Link href={t.href} className="hover:text-[var(--fg)]">
+              <Link href={t.href} className={`hover:text-[var(--fg)] ${i === trail.length - 1 ? 'text-[var(--fg)]' : ''}`} aria-current={i === trail.length - 1 ? 'page' : undefined}>
                 {t.name}
               </Link>
             </span>
           ))}
         </nav>
-        <div className="mt-10 grid gap-x-12 gap-y-8 pb-[clamp(48px,6vw,88px)] lg:grid-cols-12">
-          <div className="lg:col-span-8">
-            <p className="tav" data-hero-fade>
-              Tav. {n} <b>— {label}</b>
-            </p>
-            <h1 className="display mt-6 !text-[clamp(2.5rem,6.4vw,6rem)]" data-split>
-              {title}
-            </h1>
-          </div>
+        <div className="grid gap-y-9 pb-[clamp(48px,6vw,88px)] pt-[clamp(40px,6vw,96px)] lg:grid-cols-12">
+          <h1 className="display text-right !text-[clamp(2.5rem,6.6vw,6.4rem)] lg:col-span-11 lg:col-start-2" data-split>
+            {title}
+          </h1>
           {children && (
-            <div className="grid content-end gap-6 lg:col-span-4" data-hero-fade>
-              {children}
+            <div className="grid content-start gap-6 lg:col-span-12 lg:grid-cols-12 lg:items-end">
+              <div className="grid content-start gap-6 lg:col-span-5" data-hero-fade>
+                {children}
+              </div>
+              <Dim className="hidden lg:col-span-6 lg:col-start-7 lg:mb-3 lg:block" from="end" />
             </div>
           )}
         </div>

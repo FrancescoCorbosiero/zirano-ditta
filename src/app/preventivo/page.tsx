@@ -13,16 +13,7 @@ export default async function PreventivoPage({ searchParams }: { searchParams: P
   const { servizio = '' } = await searchParams;
   return (
     <>
-      <PageHero
-        n="07"
-        label="Preventivo gratuito"
-        trail={[{ name: 'Preventivo', href: '/preventivo' }]}
-        title={
-          <>
-            Cinque domande, <em>una cifra chiara.</em>
-          </>
-        }
-      >
+      <PageHero trail={[{ name: 'Preventivo', href: '/preventivo' }]} title="Cinque domande, una cifra chiara.">
         <p className="lead">Raccontaci il lavoro: ti richiamiamo entro un giorno lavorativo. Se preferisci la voce, chiamaci al {SITE.phone.label}.</p>
       </PageHero>
       <section className="section !pt-[clamp(40px,5vw,72px)]">

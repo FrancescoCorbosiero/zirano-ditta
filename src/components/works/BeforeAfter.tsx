@@ -36,8 +36,8 @@ export default function BeforeAfter({ before, after }: { before: MediaKey; after
         <Image src={media(before).src} alt={media(before).alt} fill sizes="100vw" unoptimized draggable={false} className="object-cover" />
       </div>
 
-      <span className="mono absolute left-3 top-3 border border-white/15 bg-notte/55 px-3 py-1.5 text-gelo backdrop-blur-md">Prima</span>
-      <span className="mono absolute right-3 top-3 bg-ottone px-3 py-1.5 text-notte">Dopo</span>
+      <span className="meta absolute left-3 top-3 border border-white/15 bg-notte/55 px-3 py-1.5 text-gelo backdrop-blur-md">Prima</span>
+      <span className="meta absolute right-3 top-3 bg-ottone px-3 py-1.5 text-notte">Dopo</span>
 
       <div className="absolute inset-y-0 w-px bg-gelo" style={{ left: `${pos}%` }}>
         <button

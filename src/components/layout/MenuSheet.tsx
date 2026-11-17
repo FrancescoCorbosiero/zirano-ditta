@@ -38,7 +38,7 @@ export default function MenuSheet({ open, onClose }: { open: boolean; onClose: (
               return (
                 <li key={item.href} className="menu-item border-b border-white/10" style={{ '--i': i } as React.CSSProperties}>
                   <Link href={item.href} onClick={onClose} aria-current={active ? 'page' : undefined} className="flex items-baseline gap-4 py-[15px]">
-                    <span className="mono w-7 text-gelo-mute">{pad(i)}</span>
+                    <span className="meta w-7 text-gelo-mute">{pad(i)}</span>
                     <span className="text-[30px] font-[480] leading-none tracking-[-0.03em]" style={{ fontStretch: '114%' }}>
                       {item.label}
                     </span>
@@ -51,7 +51,7 @@ export default function MenuSheet({ open, onClose }: { open: boolean; onClose: (
         </nav>
 
         <div className="menu-item mt-6 grid gap-4" style={{ '--i': 7 } as React.CSSProperties}>
-          <div className="mono flex justify-between text-gelo-mute">
+          <div className="meta flex justify-between text-gelo-mute">
             <a href={SITE.phone.href}>{SITE.phone.label}</a>
             <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
           </div>

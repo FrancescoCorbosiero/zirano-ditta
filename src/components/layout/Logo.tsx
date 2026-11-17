@@ -56,7 +56,7 @@ export default function Logo({
         >
           Zirano
         </span>
-        <span className="mono mt-[5px] opacity-60" style={{ fontSize: Math.max(8.5, size * 0.25), letterSpacing: '0.34em' }}>
+        <span className="mt-[5px] font-[540] uppercase opacity-60" style={{ fontStretch: '125%', fontSize: Math.max(8.5, size * 0.25), letterSpacing: '0.36em' }}>
           Arredi
         </span>
       </span>

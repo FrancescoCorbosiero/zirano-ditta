@@ -22,17 +22,8 @@ const CHANNELS = [
 export default function ContattiPage() {
   return (
     <>
-      <PageHero
-        n="06"
-        label="Contatti"
-        trail={[{ name: 'Contatti', href: '/contatti' }]}
-        title={
-          <>
-            Parliamo del <em>tuo spazio.</em>
-          </>
-        }
-      >
-        <p className="lead">Una telefonata, una foto su WhatsApp o il modulo del preventivo: scegli il modo più comodo, rispondiamo entro un giorno lavorativo.</p>
+      <PageHero trail={[{ name: 'Contatti', href: '/contatti' }]} title="Parliamo del tuo spazio.">
+        <p className="lead">Telefono, WhatsApp o modulo: rispondiamo entro un giorno lavorativo.</p>
         <div>
           <Button href={QUOTE_HREF} variant="brass" magnetic>
             Richiedi un preventivo
@@ -49,7 +40,7 @@ export default function ContattiPage() {
                   <span className="grid h-11 w-11 place-items-center border border-[var(--line-strong)] transition-colors duration-300 group-hover:border-ottone group-hover:bg-ottone">
                     <c.icon size={18} strokeWidth={1.5} aria-hidden />
                   </span>
-                  <span className="mono text-[var(--fg-mute)] max-sm:col-start-2">{c.label}</span>
+                  <span className="meta text-[var(--fg-mute)] max-sm:col-start-2">{c.label}</span>
                   <span className="max-sm:col-start-2">
                     <span className="block text-[clamp(1.1rem,1.9vw,1.5rem)] font-[500] leading-tight tracking-[-0.02em] transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:translate-x-2">
                       {c.value}
@@ -63,7 +54,7 @@ export default function ContattiPage() {
 
           <aside className="grid content-start gap-5 lg:col-span-4 lg:col-start-9" data-reveal>
             <div className="glass p-6">
-              <p className="mono text-[var(--fg-mute)]">Orari</p>
+              <p className="meta text-[var(--fg-mute)]">Orari</p>
               <dl className="mt-4">
                 {SITE.hours.map((h) => (
                   <div key={h.days} className="flex justify-between gap-4 border-t border-[var(--line)] py-3 text-[15.5px]">
@@ -74,7 +65,7 @@ export default function ContattiPage() {
               </dl>
             </div>
             <div className="glass p-6">
-              <p className="mono text-[var(--fg-mute)]">Dove operiamo</p>
+              <p className="meta text-[var(--fg-mute)]">Dove operiamo</p>
               <p className="mt-4 text-[15.5px] text-[var(--fg-soft)]">{SITE.area}</p>
             </div>
           </aside>
@@ -88,7 +79,7 @@ export default function ContattiPage() {
           <div className="glass grid justify-items-center gap-3 px-8 py-7 text-center" data-reveal>
             <span className="block h-[11px] w-[11px] bg-ottone" />
             <p className="h3">{SITE.address.street}</p>
-            <p className="mono text-[var(--fg-mute)]">
+            <p className="meta text-[var(--fg-mute)]">
               {SITE.address.zip} {SITE.address.city} ({SITE.address.province})
             </p>
           </div>

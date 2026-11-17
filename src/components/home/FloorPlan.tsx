@@ -38,11 +38,9 @@ export default function FloorPlan({ className = '' }: { className?: string }) {
   return (
     <div data-plan data-draw="plan" aria-hidden className={`plan plan-stage relative aspect-[720/520] ${className}`}>
       <div className="plan-tilt absolute inset-0" style={{ transform: 'rotateX(54deg) rotateZ(-34deg)' }}>
-        {/* la lastra di vetro su cui poggia la pianta */}
-        <div
-          className="glass absolute inset-[4%_3%]"
-          style={{ transform: 'translateZ(-2px)', boxShadow: 'inset 0 1px 0 rgb(255 255 255 / 0.16), 60px 90px 120px -20px rgb(0 0 0 / 0.75)' }}
-        />
+        {/* la lastra su cui poggia la pianta: sembra vetro, ma senza sfocatura
+            (dentro un contesto 3D in movimento costerebbe a ogni fotogramma) */}
+        <div className="plan-sheet absolute inset-[4%_3%]" style={{ transform: 'translateZ(-2px)' }} />
 
         {/* 1 · muri, finestre, porte, quote */}
         <svg viewBox={VB} className={layer} fill="none">

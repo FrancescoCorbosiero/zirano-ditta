@@ -9,7 +9,7 @@ const year = new Date().getFullYear();
 function Col({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <p className="mono text-gelo-mute">{title}</p>
+      <p className="meta text-gelo-mute">{title}</p>
       <ul className="mt-5 grid gap-2.5 text-[15.5px]">{children}</ul>
     </div>
   );
@@ -26,33 +26,32 @@ const A = ({ href, children }: { href: string; children: React.ReactNode }) => (
 export default function SiteFooter() {
   return (
     <footer className="tone-dark relative overflow-hidden pb-[calc(env(safe-area-inset-bottom)+96px)] lg:pb-10">
-      <div className="grid-plan" />
+      <div className="grid-plan grid-plan-c" />
       <div className="wrap relative">
-        {/* Invito finale */}
-        <div className="grid gap-10 border-b border-[var(--line)] py-[clamp(72px,9vw,128px)] lg:grid-cols-12 lg:items-end">
-          <h2 className="h2 lg:col-span-8" data-split>
-            Raccontaci lo spazio. <br />
-            Al resto <em>pensiamo noi.</em>
+        {/* Invito finale, sull'asse centrale come la hero */}
+        <div className="flex flex-col items-center border-b border-[var(--line)] py-[clamp(96px,12vw,184px)] text-center">
+          <h2 className="display max-w-[11ch]" data-split>
+            Raccontaci lo spazio.
           </h2>
-          <div className="grid gap-6 lg:col-span-4" data-reveal>
-            <p className="lead">Sopralluogo e preventivo sono gratuiti. Rispondiamo entro un giorno lavorativo.</p>
-            <div className="flex flex-wrap gap-3">
-              <Button href={QUOTE_HREF} variant="brass" magnetic>
-                Richiedi un preventivo
-              </Button>
-              <Button href={SITE.phone.href} variant="line">
-                {SITE.phone.label}
-              </Button>
-            </div>
+          <p className="lead mx-auto mt-7" data-reveal>
+            Sopralluogo e preventivo gratuiti. Rispondiamo entro un giorno lavorativo.
+          </p>
+          <div className="mt-9 flex flex-wrap justify-center gap-3" data-reveal>
+            <Button href={QUOTE_HREF} variant="brass" magnetic>
+              Richiedi un preventivo
+            </Button>
+            <Button href={SITE.phone.href} variant="line">
+              {SITE.phone.label}
+            </Button>
           </div>
         </div>
 
         <div className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-12" data-reveal="stagger">
           <div className="lg:col-span-4">
             <p className="max-w-[30ch] text-[15.5px] text-gelo/70">
-              {SITE.name} — {SITE.payoff}. Traslochi, montaggi, installazioni, smaltimenti e depositi.
+              {SITE.name} — {SITE.payoff}.
             </p>
-            <address className="mono mt-6 grid gap-1.5 not-italic text-gelo-mute">
+            <address className="meta mt-6 grid gap-1.5 not-italic text-gelo-mute">
               <span>
                 {SITE.address.street}, {SITE.address.zip} {SITE.address.city} ({SITE.address.province})
               </span>
@@ -93,7 +92,7 @@ export default function SiteFooter() {
               {SITE.hours.map((h) => (
                 <li key={h.days} className="flex justify-between gap-4 text-gelo/55">
                   <span>{h.days}</span>
-                  <span>{h.time}</span>
+                  <span className="num">{h.time}</span>
                 </li>
               ))}
             </Col>
@@ -101,12 +100,11 @@ export default function SiteFooter() {
         </div>
 
         {/* Il nome a tutta larghezza: il logo chiude la pagina come un cartiglio. */}
-        <div className="flex items-end gap-[3vw] border-t border-[var(--line)] pt-10" aria-hidden>
+        <div className="flex items-end justify-center gap-[3vw] border-t border-[var(--line)] pt-10" aria-hidden>
           <span data-draw className="shrink-0 text-gelo">
             <LogoMark size={0} weight={1.1} className="!h-[13.5vw] !w-[13.5vw] max-h-[190px] max-w-[190px]" />
           </span>
           <span
-            data-float="26"
             className="select-none whitespace-nowrap font-[560] uppercase leading-[0.74] text-gelo"
             style={{ fontSize: 'min(14.4vw, 205px)', fontStretch: '125%', letterSpacing: '-0.035em' }}
           >
@@ -114,7 +112,7 @@ export default function SiteFooter() {
           </span>
         </div>
 
-        <div className="mono mt-10 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-gelo-mute">
+        <div className="meta mt-10 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-gelo-mute">
           <span>
             © {year} {SITE.legalName}
           </span>

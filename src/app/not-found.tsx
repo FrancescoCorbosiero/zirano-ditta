@@ -5,11 +5,11 @@ export default function NotFound() {
     <section data-hero className="tone-dark relative grid min-h-[100svh] place-items-center overflow-hidden">
       <div className="grid-plan" />
       <div className="wrap relative text-center">
-        <p className="tav" data-hero-fade>
-          Errore 404 <b>— Stanza non in pianta</b>
+        <p className="legend-fig !text-center !text-[clamp(5rem,16vw,13rem)] text-[var(--fg-mute)]" data-hero-fade>
+          404
         </p>
         <h1 className="display mt-8" data-split>
-          Qui non c’è <em>nessuna porta.</em>
+          Qui non c’è nessuna porta.
         </h1>
         <p className="lead mx-auto mt-7" data-hero-fade>
           La pagina che cerchi è stata spostata, oppure non è mai esistita.

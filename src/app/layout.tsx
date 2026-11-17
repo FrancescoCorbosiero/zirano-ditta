@@ -30,10 +30,11 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-/* Prima del primo fotogramma: accende gli stati iniziali delle animazioni
-   (solo se il movimento è permesso) e, alla prima pagina della visita,
-   l'intro con il logo. Se il motore non arriva, dopo 6 s tutto torna visibile. */
-const BOOT = `(function(){var d=document.documentElement;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.classList.add('motion');try{if(!sessionStorage.getItem('z-intro')){sessionStorage.setItem('z-intro','1');d.classList.add('intro');setTimeout(function(){d.classList.remove('intro')},2700)}}catch(e){}setTimeout(function(){if(!window.__motion)d.classList.remove('motion')},6000)})()`;
+/* Prima del primo fotogramma: segna che JavaScript c'è (`js`), accende gli
+   stati iniziali delle animazioni (solo se il movimento è permesso) e, alla
+   prima pagina della visita, l'intro con il logo. Se il motore non arriva,
+   dopo 6 s tutto torna visibile. */
+const BOOT = `(function(){var d=document.documentElement;d.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.classList.add('motion');try{if(!sessionStorage.getItem('z-intro')){sessionStorage.setItem('z-intro','1');d.classList.add('intro');setTimeout(function(){d.classList.remove('intro')},2700)}}catch(e){}setTimeout(function(){if(!window.__motion)d.classList.remove('motion')},6000)})()`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -52,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="intro-inner">
             <Logo size={92} draw stacked />
             <span className="intro-line" />
-            <span className="intro-word mono text-gelo-mute">
+            <span className="intro-word meta text-gelo-mute">
               <span>{SITE.payoff}</span>
             </span>
           </div>

@@ -8,7 +8,7 @@ export const metadata = { ...pageMeta({ title: 'Informativa privacy', descriptio
 export default function PrivacyPage() {
   return (
     <>
-      <PageHero n="08" label="Privacy" trail={[{ name: 'Privacy', href: '/privacy' }]} title="Informativa privacy" />
+      <PageHero trail={[{ name: 'Privacy', href: '/privacy' }]} title="Informativa privacy" />
       <section className="section !pt-[clamp(48px,6vw,88px)]">
         <div className="wrap">
           <div className="prose-z max-w-[70ch]">

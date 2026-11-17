@@ -4,6 +4,7 @@ import Button, { Arrow } from '@/components/ui/Button';
 import FaqList from '@/components/ui/FaqList';
 import Media from '@/components/ui/Media';
 import PageHero from '@/components/ui/PageHero';
+import SectionHead from '@/components/ui/SectionHead';
 import JsonLd from '@/components/seo/JsonLd';
 import WorkCard from '@/components/works/WorkCard';
 import { breadcrumbGraph, faqGraph, pageMeta } from '@/lib/seo';
@@ -12,6 +13,8 @@ import { QUOTE_HREF } from '@/lib/site';
 import { WORKS, pad } from '@/lib/works';
 
 type Props = { params: Promise<{ slug: string }> };
+
+const STEP_WORDS: Record<number, string> = { 2: 'due', 3: 'tre', 4: 'quattro', 5: 'cinque', 6: 'sei' };
 
 export const dynamicParams = false;
 export const generateStaticParams = () => SERVICES.map((s) => ({ slug: s.slug }));
@@ -34,8 +37,6 @@ export default async function ServicePage({ params }: Props) {
       <JsonLd data={breadcrumbGraph([{ name: 'Servizi', path: '/servizi' }, { name: service.title, path: `/servizi/${service.slug}` }])} />
       <JsonLd data={faqGraph(service.faq)} />
       <PageHero
-        n={`02.${index + 1}`}
-        label={`Servizio ${service.code}`}
         trail={[
           { name: 'Servizi', href: '/servizi' },
           { name: service.title, href: `/servizi/${service.slug}` },
@@ -59,16 +60,14 @@ export default async function ServicePage({ params }: Props) {
       <section className="section">
         <div className="wrap grid gap-x-12 gap-y-14 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <p className="tav" data-reveal>
-              Il servizio <b>— in sintesi</b>
-            </p>
-            <p className="h3 mt-7 !text-[clamp(1.5rem,2.7vw,2.3rem)] !font-[460] !leading-[1.18]" data-scrub-text>
+            <h2 className="sr-only">Il servizio in sintesi</h2>
+            <p className="h3 !text-[clamp(1.5rem,2.7vw,2.3rem)] !font-[460] !leading-[1.18]" data-scrub-text>
               {service.intro}
             </p>
           </div>
           <div className="lg:col-span-4 lg:col-start-9">
             <div className="glass p-6 lg:p-7" data-reveal>
-              <p className="mono text-[var(--fg-mute)]">Cosa comprende</p>
+              <p className="meta text-[var(--fg-mute)]">Cosa comprende</p>
               <ul className="mt-4">
                 {service.includes.map((item) => (
                   <li key={item} className="flex gap-3 border-t border-[var(--line)] py-3 text-[15px]">
@@ -82,12 +81,10 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section bg-carta">
+      <section className="section tone-paper">
         <div className="wrap">
-          <p className="tav" data-reveal>
-            Come si svolge <b>— {service.steps.length} fasi</b>
-          </p>
-          <div data-steps className="relative mt-12">
+          <SectionHead align="split" title="Come si svolge," titleEnd={`in ${STEP_WORDS[service.steps.length] ?? service.steps.length} fasi.`} />
+          <div data-steps className="relative mt-[clamp(48px,6vw,88px)]">
             <div className="absolute left-[5px] top-0 h-full w-px bg-[var(--line)] lg:left-0 lg:top-[5px] lg:h-px lg:w-full">
               <div data-steps-line className="h-full w-full origin-top-left bg-ottone" />
             </div>
@@ -95,8 +92,8 @@ export default async function ServicePage({ params }: Props) {
               {service.steps.map((m, i) => (
                 <li key={m.title} data-step className="relative pl-9 lg:pl-0 lg:pt-10">
                   <span className="dot absolute left-0 top-1 block h-[11px] w-[11px] border border-ottone bg-ottone lg:top-0" />
-                  <span className="mono text-[var(--fg-mute)]">Fase {pad(i + 1)}</span>
-                  <h3 className="h3 mt-3">{m.title}</h3>
+                  <span className="meta text-[var(--fg-mute)]">{pad(i + 1)}</span>
+                  <h3 className="h3 mt-2">{m.title}</h3>
                   <p className="mt-3 max-w-[34ch] text-[15.5px] text-[var(--fg-soft)]">{m.text}</p>
                 </li>
               ))}
@@ -108,13 +105,13 @@ export default async function ServicePage({ params }: Props) {
       {works.length > 0 && (
         <section className="section">
           <div className="wrap">
-            <div className="flex items-end justify-between gap-6">
-              <h2 className="h2" data-split>
-                Lavori <em>di questo tipo.</em>
-              </h2>
+            <div className="flex flex-col-reverse items-start justify-between gap-6 sm:flex-row sm:items-end">
               <Link href="/lavori" className="link-u shrink-0" data-reveal>
                 Tutti i lavori <Arrow />
               </Link>
+              <h2 className="h2 sm:text-right" data-split>
+                Lavori di questo tipo.
+              </h2>
             </div>
             <div className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-2">
               {works.map((w) => (
@@ -139,7 +136,7 @@ export default async function ServicePage({ params }: Props) {
       <Link href={`/servizi/${next.slug}`} className="tone-dark group block border-b border-[var(--line)]">
         <div className="wrap flex items-center justify-between gap-6 py-[clamp(48px,6vw,88px)]">
           <div>
-            <span className="mono text-[var(--fg-mute)]">Servizio successivo</span>
+            <span className="meta text-[var(--fg-mute)]">Servizio successivo</span>
             <p className="h2 mt-4 transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:translate-x-4">{next.title}</p>
           </div>
           <span className="grid h-14 w-14 shrink-0 place-items-center border border-[var(--line-strong)] transition-colors group-hover:border-ottone group-hover:bg-ottone group-hover:text-notte">

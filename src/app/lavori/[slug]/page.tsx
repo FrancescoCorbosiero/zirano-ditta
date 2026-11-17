@@ -34,8 +34,6 @@ export default async function WorkPage({ params }: Props) {
     <>
       <JsonLd data={breadcrumbGraph([{ name: 'Lavori', path: '/lavori' }, { name: work.title, path: `/lavori/${work.slug}` }])} />
       <PageHero
-        n={`03.${pad(index + 1)}`}
-        label={work.tags.join(' · ')}
         trail={[
           { name: 'Lavori', href: '/lavori' },
           { name: work.title, href: `/lavori/${work.slug}` },
@@ -43,6 +41,7 @@ export default async function WorkPage({ params }: Props) {
         title={work.title}
       >
         <p className="lead">{work.summary}</p>
+        <p className="meta text-[var(--fg-mute)]">{work.tags.join(' · ')}</p>
       </PageHero>
 
       {/* Copertina a tutta larghezza con il cartiglio del lavoro in vetro */}
@@ -51,13 +50,15 @@ export default async function WorkPage({ params }: Props) {
           <Media name={work.cover} ratio="16 / 9" parallax={1} priority sizes="100vw" className="max-sm:!aspect-[4/3]" />
           <div className="relative z-10 -mt-10 sm:absolute sm:bottom-6 sm:right-[calc(var(--gutter)+24px)] sm:mt-0 sm:w-[340px]" data-float="34">
             <dl className="glass p-5 text-gelo" style={{ '--glass-bg': 'rgb(12 15 18 / 0.6)' } as React.CSSProperties}>
-              <div className="mono flex justify-between pb-3 text-[var(--fg-mute)]">
+              <div className="meta flex justify-between pb-3 text-[var(--fg-mute)]">
                 <span>Cartiglio</span>
-                <span>Tav. 03.{pad(index + 1)}</span>
+                <span>
+                  Lavoro {pad(index + 1)} · {work.year}
+                </span>
               </div>
               {work.sheet.map((row) => (
                 <div key={row.label} className="flex items-baseline justify-between gap-4 border-t border-[var(--line)] py-2.5">
-                  <dt className="mono text-[var(--fg-mute)]">{row.label}</dt>
+                  <dt className="meta text-[var(--fg-mute)]">{row.label}</dt>
                   <dd className="text-[15px] font-[540]">{row.value}</dd>
                 </div>
               ))}
@@ -70,11 +71,12 @@ export default async function WorkPage({ params }: Props) {
       <section className="section">
         <div className="wrap grid gap-x-12 gap-y-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <p className="tav" data-reveal>
-              Il lavoro <b>— {work.place}, {work.year}</b>
+            <h2 className="sr-only">Il lavoro</h2>
+            <p className="meta text-[var(--fg-mute)]" data-reveal>
+              {work.place}, {work.year}
             </p>
             {service && (
-              <Link href={`/servizi/${service.slug}`} className="link-u mt-8" data-reveal>
+              <Link href={`/servizi/${service.slug}`} className="link-u mt-4" data-reveal>
                 Servizio: {service.title} <Arrow />
               </Link>
             )}
@@ -90,15 +92,15 @@ export default async function WorkPage({ params }: Props) {
       </section>
 
       {work.before && work.after && (
-        <section className="section bg-carta">
+        <section className="section tone-paper">
           <div className="wrap">
-            <div className="flex flex-wrap items-end justify-between gap-6">
-              <h2 className="h2" data-split>
-                Prima <em>e dopo.</em>
-              </h2>
+            <div className="flex flex-wrap-reverse items-end justify-between gap-6">
               <p className="quota quota-start w-full max-w-[320px]" data-reveal>
                 <span>Trascina la lama</span>
               </p>
+              <h2 className="h2 sm:text-right" data-split>
+                Prima e dopo.
+              </h2>
             </div>
             <div className="crop mt-12" data-reveal>
               <BeforeAfter before={work.before} after={work.after} />
@@ -131,7 +133,7 @@ export default async function WorkPage({ params }: Props) {
           </div>
         </div>
         <div className="wrap relative py-[clamp(88px,12vw,180px)]">
-          <span className="mono text-[var(--fg-mute)]">Prossimo lavoro — {pad(((index + 1) % WORKS.length) + 1)}</span>
+          <span className="meta text-[var(--fg-mute)]">Prossimo lavoro — {pad(((index + 1) % WORKS.length) + 1)}</span>
           <p className="display mt-5 !text-[clamp(2.4rem,7vw,6.5rem)] transition-transform duration-1000 ease-[var(--ease-out-expo)] group-hover:translate-x-5">{next.title}</p>
         </div>
       </Link>

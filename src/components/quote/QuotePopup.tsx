@@ -37,8 +37,8 @@ export default function QuotePopup({ open, service, onClose }: { open: boolean; 
     >
       <div ref={ref} className="flex h-full flex-col overflow-y-auto overscroll-contain pt-[env(safe-area-inset-top)]" data-lenis-prevent>
         <div className="flex items-center justify-between border-b border-grafite/10 py-3 pl-5 pr-3 sm:pl-7">
-          <p className="tav">
-            Preventivo <b>— gratuito</b>
+          <p className="text-[15px] font-[600] tracking-[-0.01em] text-grafite">
+            Preventivo gratuito <span className="font-[500] text-grafite-mute">· risposta in 24 ore</span>
           </p>
           <button type="button" data-autofocus onClick={onClose} aria-label="Chiudi" className="grid h-10 w-10 place-items-center rounded-[3px] text-grafite hover:bg-grafite/5">
             <X size={20} strokeWidth={1.5} />

@@ -1,10 +1,9 @@
 import localFont from 'next/font/local';
 
 /**
- * Font self-hosted (nessuna richiesta a terzi dal browser):
- *  · Archivo — variabile su peso e larghezza: titoli larghi, testo normale;
- *  · Newsreader corsivo — la parola in evidenza dentro i titoli;
- *  · Geist Mono — quote, misure, etichette da tavola tecnica.
+ * Una sola famiglia, self-hosted (nessuna richiesta a terzi dal browser):
+ * Archivo variabile su peso (100–900) e larghezza (62–125%). I titoli sono
+ * larghi, le scritte della planimetria strette, i dati in cifre tabellari.
  */
 export const archivo = localFont({
   src: '../fonts/archivo-latin-wdth-normal.woff2',
@@ -16,23 +15,4 @@ export const archivo = localFont({
   fallback: ['system-ui', 'Arial', 'sans-serif'],
 });
 
-export const newsreader = localFont({
-  src: '../fonts/newsreader-latin-opsz-italic.woff2',
-  weight: '200 800',
-  style: 'italic',
-  variable: '--font-newsreader',
-  display: 'swap',
-  fallback: ['Georgia', 'serif'],
-});
-
-export const geistMono = localFont({
-  src: [
-    { path: '../fonts/geist-mono-latin-400-normal.woff2', weight: '400', style: 'normal' },
-    { path: '../fonts/geist-mono-latin-500-normal.woff2', weight: '500', style: 'normal' },
-  ],
-  variable: '--font-geist-mono',
-  display: 'swap',
-  fallback: ['ui-monospace', 'Menlo', 'monospace'],
-});
-
-export const fontVariables = `${archivo.variable} ${newsreader.variable} ${geistMono.variable}`;
+export const fontVariables = archivo.variable;

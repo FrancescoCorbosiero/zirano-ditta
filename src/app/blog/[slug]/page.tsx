@@ -40,8 +40,6 @@ export default async function PostPage({ params }: Props) {
         }}
       />
       <PageHero
-        n="05"
-        label={post.category}
         trail={[
           { name: 'Guide', href: '/blog' },
           { name: post.category, href: `/blog/${post.slug}` },
@@ -65,7 +63,7 @@ export default async function PostPage({ params }: Props) {
           <div className="prose-z lg:col-span-7 lg:col-start-2" dangerouslySetInnerHTML={{ __html: post.html }} />
           <aside className="lg:col-span-3 lg:col-start-10">
             <div className="glass sticky top-28 p-6">
-              <p className="mono text-[var(--fg-mute)]">Serve una mano?</p>
+              <p className="meta text-[var(--fg-mute)]">Serve una mano?</p>
               <p className="h3 mt-4 !text-[1.35rem]">Sopralluogo e preventivo sono gratuiti.</p>
               <Button href={QUOTE_HREF} small className="mt-6">
                 Preventivo
@@ -77,9 +75,7 @@ export default async function PostPage({ params }: Props) {
 
       <section className="section !pt-0">
         <div className="wrap">
-          <p className="tav">
-            Continua <b>— altre guide</b>
-          </p>
+          <h2 className="h3">Altre guide</h2>
           <ul className="mt-8 border-t border-[var(--line-strong)]">
             {others.map((p) => (
               <li key={p.slug} className="border-b border-[var(--line)]">

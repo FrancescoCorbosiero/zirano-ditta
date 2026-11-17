@@ -13,14 +13,14 @@ export default function WorkCard({ work, index, tall = false, sizes = '(min-widt
           <Image src={m.src} alt={m.alt} fill sizes={sizes} unoptimized className="zoom" />
           <span className="glare" />
           <span className="tag-glass">
-            <span className="mono">{work.tags[0]}</span>
+            <span className="meta">{work.tags[0]}</span>
           </span>
         </div>
       </div>
       <div className="mt-5 grid grid-cols-[auto_1fr_auto] items-baseline gap-x-4" data-reveal>
-        <span className="mono text-[var(--accent)]">{pad(index + 1)}</span>
+        <span className="meta text-[var(--accent)]">{pad(index + 1)}</span>
         <h3 className="h3">{work.title}</h3>
-        <span className="mono text-[var(--fg-mute)]">{work.year}</span>
+        <span className="meta text-[var(--fg-mute)]">{work.year}</span>
         <p className="col-span-2 col-start-2 mt-2 max-w-[48ch] text-[15px] text-[var(--fg-soft)]">{work.summary}</p>
       </div>
     </Link>

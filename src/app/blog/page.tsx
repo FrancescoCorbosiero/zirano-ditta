@@ -16,16 +16,7 @@ export default function BlogPage() {
   const posts = allPosts();
   return (
     <>
-      <PageHero
-        n="05"
-        label="Guide"
-        trail={[{ name: 'Guide', href: '/blog' }]}
-        title={
-          <>
-            Quello che abbiamo <em>imparato sul campo.</em>
-          </>
-        }
-      >
+      <PageHero trail={[{ name: 'Guide', href: '/blog' }]} title="Quello che abbiamo imparato sul campo.">
         <p className="lead">Consigli pratici per preparare un trasloco, montare bene un mobile, scegliere un deposito.</p>
       </PageHero>
       <section className="section !pt-[clamp(48px,6vw,88px)]">
@@ -37,7 +28,7 @@ export default function BlogPage() {
                   <Image src={media(p.cover).src} alt="" fill sizes="340px" unoptimized className="zoom" />
                 </div>
                 <div>
-                  <p className="mono text-[var(--fg-mute)]">
+                  <p className="meta text-[var(--fg-mute)]">
                     <span className="text-[var(--accent)]">{p.category}</span> · {formatDate(p.date)} · {p.minutes} min
                   </p>
                   <h2 className="h3 mt-4 !text-[clamp(1.4rem,2.6vw,2.2rem)] transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:translate-x-3">{p.title}</h2>

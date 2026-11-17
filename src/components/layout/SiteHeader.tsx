@@ -32,7 +32,7 @@ export default function SiteHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 px-3 pt-3 transition-transform duration-700 ease-[var(--ease-out-expo)] sm:px-5 sm:pt-4 ${
-        hidden && !overlay ? '-translate-y-[130%]' : ''
+        hidden && !overlay ? '-translate-y-[calc(100%+64px)]' : ''
       }`}
     >
       <div className="glass-ink mx-auto flex h-[60px] max-w-[1400px] items-center justify-between pl-4 pr-2 sm:pl-5">
@@ -49,7 +49,7 @@ export default function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a href={SITE.phone.href} className="mono hidden px-3 text-gelo/70 transition-colors hover:text-gelo xl:block">
+          <a href={SITE.phone.href} className="meta hidden px-3 text-gelo/70 transition-colors hover:text-gelo xl:block">
             {SITE.phone.label}
           </a>
           <Button href={QUOTE_HREF} variant="brass" small className="hidden sm:inline-flex">

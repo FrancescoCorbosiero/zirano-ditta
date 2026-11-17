@@ -44,7 +44,7 @@ const fieldLabel = (htmlFor: string, text: string, optional = false) => (
 function GroupTitle({ id, children, hint }: { id?: string; children: ReactNode; hint?: string }) {
   return (
     <div className="mb-2.5 mt-7 flex items-baseline justify-between gap-3 first:mt-0">
-      <h4 id={id} className="mono text-grafite">
+      <h4 id={id} className="text-[15px] font-[600] tracking-[-0.01em] text-grafite">
         {children}
       </h4>
       {hint && <span className="text-[12.5px] text-grafite-mute">{hint}</span>}
@@ -90,13 +90,11 @@ function Summary({ draft }: { draft: QuoteDraft }) {
   ];
   return (
     <aside className="glass sticky top-28 hidden self-start p-6 lg:block" aria-label="Riepilogo della richiesta">
-      <p className="tav">
-        Scheda <b>— La tua richiesta</b>
-      </p>
+      <p className="text-[15px] font-[600] tracking-[-0.01em] text-grafite">La tua richiesta</p>
       <dl className="mt-5">
         {rows.map(([k, v]) => (
           <div key={k} className="grid grid-cols-[92px_1fr] gap-3 border-t border-[var(--line)] py-3 text-[14.5px]">
-            <dt className="mono pt-0.5 text-grafite-mute">{k}</dt>
+            <dt className="meta pt-0.5 text-grafite-mute">{k}</dt>
             <dd className={`transition-colors duration-500 ${v ? 'text-grafite' : 'text-grafite-mute/50'}`}>{v || '—'}</dd>
           </div>
         ))}
@@ -213,7 +211,7 @@ export default function QuoteFlow({
       {/* Testata: passo corrente e avanzamento come una linea di quota */}
       <div ref={top} className="scroll-mt-28 px-5 pt-5 sm:px-7">
         <div className="flex items-center gap-4">
-          <span className="mono text-grafite-mute">
+          <span className="meta text-grafite-mute">
             {pad(step + 1)} / {pad(QUOTE_STEPS.length)}
           </span>
           <ol className="grid flex-1 gap-1" style={{ gridTemplateColumns: `repeat(${QUOTE_STEPS.length}, 1fr)` }} aria-hidden>
@@ -244,7 +242,7 @@ export default function QuoteFlow({
                     on ? 'border-grafite bg-grafite text-gelo' : 'border-grafite/15 bg-white/70 text-grafite hover:border-grafite/50'
                   }`}
                 >
-                  <span className={`mono ${on ? 'text-ottone-soft' : 'text-grafite-mute'}`}>{code}</span>
+                  <span className={`meta ${on ? 'text-ottone-soft' : 'text-grafite-mute'}`}>{code}</span>
                   <span className="text-[16px] font-[560] leading-tight tracking-[-0.01em]">{o.label}</span>
                   {on && <Check size={16} strokeWidth={2.2} className="absolute right-3.5 top-3.5 text-ottone-soft" aria-hidden />}
                 </button>
@@ -317,7 +315,7 @@ export default function QuoteFlow({
                 title="Piano"
                 after={
                   <span className="flex items-center gap-3">
-                    <span className="mono w-12 text-right text-grafite">{draft.floor === 0 ? 'Terra' : `${draft.floor}°`}</span>
+                    <span className="meta w-12 text-right text-grafite">{draft.floor === 0 ? 'Terra' : `${draft.floor}°`}</span>
                     <Stepper
                       small
                       outline

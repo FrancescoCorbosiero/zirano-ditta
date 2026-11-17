@@ -8,7 +8,7 @@ export default function Ruler() {
       />
       <div className="absolute inset-y-0 right-0 w-px bg-white/50" />
       <div data-ruler-mark className="absolute right-0 top-0 flex -translate-y-1/2 items-center gap-1.5">
-        <span data-ruler-n className="mono text-white" style={{ fontSize: 9.5 }}>
+        <span data-ruler-n className="meta text-white" style={{ fontSize: 9.5 }}>
           000
         </span>
         <span className="block h-px w-4 bg-ottone-soft" />

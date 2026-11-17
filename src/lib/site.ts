@@ -47,12 +47,12 @@ export const NAV = [
 
 export const QUOTE_HREF = '/preventivo';
 
-/** Numeri in evidenza (segnaposto: confermare con il cliente). */
+/** Numeri in evidenza, la "legenda" della home (segnaposto: confermare con il cliente). */
 export const STATS = [
-  { value: 15, suffix: '+', label: 'anni di cantieri', note: 'dal 2009' },
-  { value: 2400, suffix: '', label: 'lavori consegnati', note: 'case, uffici, negozi' },
-  { value: 600, suffix: ' m²', label: 'di deposito custodito', note: 'videosorvegliato' },
-  { value: 24, suffix: ' h', label: 'per il tuo preventivo', note: 'giorni lavorativi' },
+  { value: 2400, suffix: '', label: 'Lavori consegnati', note: 'Case, uffici, hotel, negozi' },
+  { value: 15, suffix: '+', label: 'Anni di cantieri', note: 'Dal 2009' },
+  { value: 600, suffix: 'm²', label: 'Deposito custodito', note: 'Asciutto e videosorvegliato' },
+  { value: 24, suffix: 'h', label: 'Per un preventivo scritto', note: 'Nei giorni lavorativi' },
 ] as const;
 
 /** Impegni dichiarati in hero e nel preventivo (segnaposto). */
@@ -60,23 +60,4 @@ export const PROMISES = [
   { title: 'Sopralluogo gratuito', text: 'In presenza o in videochiamata' },
   { title: 'Preventivo in 24 ore', text: 'Scritto, voce per voce' },
   { title: 'Merce assicurata', text: 'Dal primo all’ultimo collo' },
-] as const;
-
-/** Recensioni — TESTI D'ESEMPIO, da sostituire con quelle vere. */
-export const TESTIMONIALS = [
-  {
-    quote: 'Hanno smontato, trasferito e rimontato una cucina intera in due giorni. Al terzo ci cucinavamo come se fosse sempre stata lì.',
-    name: 'Cliente privato',
-    context: 'Trasloco e rimontaggio cucina',
-  },
-  {
-    quote: 'Trasferimento di quaranta postazioni in un fine settimana. Lunedì mattina ogni scrivania aveva il suo cavo al posto giusto.',
-    name: 'Studio professionale',
-    context: 'Trasloco ufficio',
-  },
-  {
-    quote: 'Puntuali, ordinati, silenziosi. Il deposito ci ha permesso di ristrutturare senza un mobile tra i piedi.',
-    name: 'Cliente privato',
-    context: 'Deposito durante ristrutturazione',
-  },
 ] as const;

@@ -45,7 +45,7 @@ export const SERVICES: Service[] = [
     slug: 'montaggio-smontaggio',
     code: 'MS',
     title: 'Montaggio e smontaggio',
-    short: 'Cucine, armadi, camere, pareti attrezzate. Di qualsiasi marca.',
+    short: 'Cucine, armadi, camere, pareti attrezzate. Di qualsiasi marca, anche per conto dei mobilifici.',
     intro:
       'Mobili nuovi o già tuoi, anche senza istruzioni. Adattiamo fianchi e zoccoli, mettiamo in bolla, regoliamo ante e cassetti.',
     image: 'armadio',

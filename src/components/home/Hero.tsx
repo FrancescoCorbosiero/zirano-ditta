@@ -27,7 +27,7 @@ export default function Hero() {
           Installazioni e depositi.
         </h1>
         <p className="lead mx-auto mt-6 max-w-[34ch] sm:max-w-[62ch]" data-hero-fade>
-          Una sola squadra per case, uffici e negozi.
+          Una sola squadra per case, uffici e negozi. Da Meda, in Brianza e a Milano.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3" data-hero-fade>
           <Button href={QUOTE_HREF} variant="brass" magnetic>

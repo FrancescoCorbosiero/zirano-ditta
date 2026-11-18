@@ -10,7 +10,7 @@ import { pad } from '@/lib/works';
 
 export const metadata = pageMeta({
   title: 'La ditta',
-  description: `Chi è ${SITE.name}: una squadra di traslocatori, montatori e installatori che lavora con il metodo di un cantiere e la cura di un artigiano.`,
+  description: `Chi è ${SITE.name}: una squadra di traslocatori, montatori e installatori a Meda, in Brianza.`,
   path: '/chi-siamo',
 });
 
@@ -34,7 +34,7 @@ export default function ChiSiamoPage() {
   return (
     <>
       <PageHero trail={[{ name: 'La ditta', href: '/chi-siamo' }]} title="La ditta.">
-        <p className="lead">{SITE.name} è una squadra di traslocatori, montatori e installatori. Dal 2009.</p>
+        <p className="lead">{SITE.name} è una squadra di traslocatori, montatori e installatori. A Meda dal {SITE.founded}.</p>
       </PageHero>
 
       <section className="tone-dark pb-[clamp(64px,8vw,120px)]">

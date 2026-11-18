@@ -11,7 +11,7 @@ export const SITE = {
   payoff: 'Servizi avanzati per Spazi e Proprietà',
   legalName: 'Ziranu Arredi S.r.l.', // segnaposto
   description:
-    'Traslochi, montaggio e smontaggio mobili, installazioni, smaltimenti e depositi. Una sola squadra per spostare, allestire e custodire ciò che dà valore ai tuoi spazi.',
+    'Traslochi, montaggio e smontaggio mobili, installazioni, smaltimenti e depositi a Meda, in Brianza e a Milano. Una sola squadra.',
   vat: 'IT00000000000', // segnaposto
   founded: 2009, // segnaposto
   phone: { label: '+39 000 000 0000', href: 'tel:+390000000000' }, // segnaposto
@@ -19,17 +19,17 @@ export const SITE = {
   email: 'info@example.it', // segnaposto
   address: {
     street: 'Via dell’Esempio 12',
-    zip: '00000',
-    city: 'Città',
-    province: 'PR',
-    region: 'Regione',
+    zip: '20821',
+    city: 'Meda',
+    province: 'MB',
+    region: 'Lombardia',
   },
   hours: [
     { days: 'Lun – Ven', time: '8:00 – 18:30' },
     { days: 'Sabato', time: '8:00 – 13:00' },
     { days: 'Domenica', time: 'Su appuntamento' },
   ],
-  area: 'Città, provincia e tutta la regione. Trasferimenti nazionali su richiesta.',
+  area: 'Brianza, Milano e Como. Trasferimenti nel resto d’Italia su richiesta.',
   social: [
     { label: 'Instagram', href: 'https://www.instagram.com/' },
     { label: 'Facebook', href: 'https://www.facebook.com/' },

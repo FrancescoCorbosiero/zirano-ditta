@@ -22,12 +22,12 @@ export default function Hero() {
 
       <div data-hero-text className="wrap relative z-10 pt-[clamp(112px,14vh,160px)] text-center">
         <h1 className="display mx-auto !text-[clamp(2.55rem,6vw,6.4rem)]" data-split>
-          Ordine agli spazi.
+          Traslochi e montaggi.
           <br />
-          Valore alle proprietà.
+          Installazioni e depositi.
         </h1>
         <p className="lead mx-auto mt-6 max-w-[34ch] sm:max-w-[62ch]" data-hero-fade>
-          Traslochi, montaggi, installazioni e depositi. Una sola squadra.
+          Una sola squadra per case, uffici e negozi.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3" data-hero-fade>
           <Button href={QUOTE_HREF} variant="brass" magnetic>

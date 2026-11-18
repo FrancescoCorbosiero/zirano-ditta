@@ -18,9 +18,9 @@ export const SERVICES: Service[] = [
     slug: 'traslochi',
     code: 'TR',
     title: 'Traslochi',
-    short: 'Case, uffici e negozi. Imballiamo, trasportiamo e rimettiamo tutto dove deve stare.',
+    short: 'Case, uffici e negozi. Imballaggio, trasporto, rimontaggio.',
     intro:
-      'Un trasloco riuscito si decide prima del giorno del trasloco. Facciamo il sopralluogo, contiamo i colli, scegliamo mezzi e squadra, chiediamo i permessi di sosta. Quando arriva il furgone, ogni cosa ha già la sua destinazione.',
+      'Sopralluogo, conteggio dei colli, mezzi e squadra, permessi di sosta. Il giorno del trasloco ogni collo ha già la sua destinazione.',
     image: 'trasloco',
     includes: [
       'Sopralluogo e inventario dei colli',
@@ -45,9 +45,9 @@ export const SERVICES: Service[] = [
     slug: 'montaggio-smontaggio',
     code: 'MS',
     title: 'Montaggio e smontaggio',
-    short: 'Cucine, armadi, camere, pareti attrezzate. Montati a regola d’arte, di qualsiasi marca.',
+    short: 'Cucine, armadi, camere, pareti attrezzate. Di qualsiasi marca.',
     intro:
-      'Montiamo mobili nuovi e rimontiamo quelli che hai già, anche senza istruzioni. Adattiamo fianchi e zoccoli, mettiamo in bolla, regoliamo ante e cassetti finché si chiudono con un dito.',
+      'Mobili nuovi o già tuoi, anche senza istruzioni. Adattiamo fianchi e zoccoli, mettiamo in bolla, regoliamo ante e cassetti.',
     image: 'armadio',
     includes: [
       'Cucine componibili con allaccio di elettrodomestici',
@@ -72,9 +72,9 @@ export const SERVICES: Service[] = [
     slug: 'installazioni',
     code: 'IN',
     title: 'Installazioni',
-    short: 'Televisori, mensole, lampadari, tende, specchi. Fissati dritti, sul muro giusto, una volta sola.',
+    short: 'Televisori, mensole, lampadari, tende, specchi.',
     intro:
-      'Ogni parete è diversa: cartongesso, laterizio, cemento. Scegliamo tassello e fissaggio in base al supporto e al peso, nascondiamo i cavi e lasciamo solo quello che vuoi vedere.',
+      'Cartongesso, laterizio o cemento: tassello e fissaggio scelti in base al supporto e al peso. Cavi nascosti.',
     image: 'installazione',
     includes: [
       'Staffe TV e canaline a scomparsa',
@@ -100,7 +100,7 @@ export const SERVICES: Service[] = [
     title: 'Smaltimenti e sgomberi',
     short: 'Ritiriamo mobili, elettrodomestici e ingombranti. Conferiti nei centri autorizzati, con ricevuta.',
     intro:
-      'Liberiamo cantine, appartamenti, uffici e locali. Separiamo ciò che si può recuperare da ciò che va smaltito e conferiamo tutto in impianti autorizzati: a te resta lo spazio vuoto e la documentazione.',
+      'Cantine, appartamenti, uffici e locali. Separiamo ciò che si recupera da ciò che va smaltito e conferiamo in impianti autorizzati, con documentazione.',
     image: 'scatole',
     includes: [
       'Sgombero di appartamenti, cantine, solai e box',
@@ -126,7 +126,7 @@ export const SERVICES: Service[] = [
     title: 'Depositi e custodia',
     short: 'Box e scaffali in un magazzino asciutto e sorvegliato. Per una settimana o per un anno.',
     intro:
-      'Ristrutturi, cambi casa con date che non coincidono, liberi spazio in ufficio. Ritiriamo, imballiamo, inventariamo e custodiamo. Quando ti serve qualcosa, te lo riportiamo.',
+      'Per ristrutturazioni, traslochi con date sfasate, uffici. Ritiro, imballaggio, inventario e custodia. Riconsegna su richiesta.',
     image: 'deposito',
     includes: [
       'Magazzino asciutto e videosorvegliato',
@@ -150,9 +150,9 @@ export const SERVICES: Service[] = [
     slug: 'su-misura',
     code: 'SP',
     title: 'Servizi su misura',
-    short: 'Allestimenti, movimentazioni delicate, piccoli trasporti. Se riguarda uno spazio, parliamone.',
+    short: 'Allestimenti, movimentazioni delicate, piccoli trasporti.',
     intro:
-      'Pianoforti, casseforti, opere d’arte, allestimenti per negozi ed eventi, consegne al piano per conto di mobilifici e architetti. Lavori che non stanno in un listino: li studiamo caso per caso.',
+      'Pianoforti, casseforti, opere d’arte, allestimenti per negozi ed eventi, consegne al piano per mobilifici e architetti. Preventivo caso per caso.',
     image: 'squadra',
     includes: [
       'Movimentazione di pianoforti, casseforti e opere',

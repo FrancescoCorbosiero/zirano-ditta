@@ -15,8 +15,8 @@ export const metadata = pageMeta({
 export default function ServiziPage() {
   return (
     <>
-      <PageHero trail={[{ name: 'Servizi', href: '/servizi' }]} title="Tutto ciò che serve a uno spazio.">
-        <p className="lead">Sei servizi che si combinano: spesso un lavoro ne tiene insieme tre. Per questo li facciamo tutti noi.</p>
+      <PageHero trail={[{ name: 'Servizi', href: '/servizi' }]} title="Servizi.">
+        <p className="lead">Sei servizi, spesso combinati nello stesso lavoro. Tutti con la nostra squadra.</p>
         <div>
           <Button href={QUOTE_HREF} variant="brass" magnetic>
             Richiedi un preventivo

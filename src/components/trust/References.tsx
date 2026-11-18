@@ -11,7 +11,7 @@ export default function References() {
   return (
     <section id="referenze" className="section">
       <div className="wrap">
-        <SectionHead align="center" size="display" title="Ci affidano i loro spazi." />
+        <SectionHead align="center" size="display" title="Clienti." />
         <div className="mt-8 flex justify-center" data-reveal>
           <Rating />
         </div>

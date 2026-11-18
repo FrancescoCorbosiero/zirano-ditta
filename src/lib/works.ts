@@ -77,7 +77,7 @@ export const WORKS: Work[] = [
     place: 'Quartiere direzionale',
     year: 2024,
     cover: 'ufficio',
-    summary: 'Venerdì sera si spegne un ufficio, lunedì mattina se ne accende un altro.',
+    summary: 'Trasferimento completo in un fine settimana: dal venerdì sera al lunedì mattina.',
     story: [
       'Ogni postazione è stata etichettata con piano, stanza e numero di scrivania. Monitor e computer hanno viaggiato in casse dedicate, gli archivi in contenitori sigillati.',
       'Domenica pomeriggio abbiamo ricollegato le postazioni seguendo la pianta concordata con lo studio.',
@@ -101,7 +101,7 @@ export const WORKS: Work[] = [
     place: 'Lungofiume',
     year: 2025,
     cover: 'installazione',
-    summary: 'Un 75 pollici sospeso, quattro faretti a binario e nemmeno un cavo in vista.',
+    summary: 'Televisore da 75 pollici a parete, quattro faretti a binario, cavi nascosti.',
     story: [
       'Parete in cartongesso: abbiamo aperto, inserito un rinforzo in multistrato e richiuso prima di fissare la staffa. I cavi scendono in una canalina a scomparsa fino al mobile.',
       'Mensole in ottone allineate al filo superiore dello schermo.',
@@ -123,7 +123,7 @@ export const WORKS: Work[] = [
     place: 'Prima periferia',
     year: 2024,
     cover: 'armadio',
-    summary: 'Da parete a parete, da pavimento a soffitto. Tre millimetri di aria per lato.',
+    summary: 'Da parete a parete e da pavimento a soffitto, tre millimetri di gioco per lato.',
     story: [
       'L’armadio è stato assemblato in piedi, perché la stanza non permetteva di alzarlo da terra. Zoccolo e cielino rifilati per chiudere a filo con soffitto e pareti.',
     ],

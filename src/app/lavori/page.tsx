@@ -12,8 +12,8 @@ export const metadata = pageMeta({
 export default function LavoriPage() {
   return (
     <>
-      <PageHero trail={[{ name: 'Lavori', href: '/lavori' }]} title="Ogni lavoro, una tavola.">
-        <p className="lead">Ciò che abbiamo spostato, montato, installato e custodito. Per ognuno: luogo, tempi, squadra, risultato.</p>
+      <PageHero trail={[{ name: 'Lavori', href: '/lavori' }]} title="Lavori.">
+        <p className="lead">Per ogni lavoro: luogo, tempi, squadra, risultato.</p>
         <p className="meta text-[var(--fg-mute)]">{WORKS.length} lavori in archivio</p>
       </PageHero>
       <section className="section !pt-[clamp(48px,6vw,88px)]">

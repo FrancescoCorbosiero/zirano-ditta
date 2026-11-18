@@ -17,8 +17,8 @@ export default function FaqPage() {
   return (
     <>
       <JsonLd data={faqGraph(FAQ_GROUPS.flatMap((g) => [...g.items]))} />
-      <PageHero trail={[{ name: 'Domande frequenti', href: '/faq' }]} title="Le risposte, prima delle domande.">
-        <p className="lead">Non trovi la tua? Chiamaci: una telefonata chiarisce più di dieci email.</p>
+      <PageHero trail={[{ name: 'Domande frequenti', href: '/faq' }]} title="Domande frequenti.">
+        <p className="lead">Non trovi la tua? Chiamaci.</p>
         <div>
           <Button href={SITE.phone.href} variant="glass">
             {SITE.phone.label}

@@ -37,10 +37,10 @@ export default function SiteFooter() {
             <Image src={media('trasloco').src} alt="" fill sizes="100vw" unoptimized className="plx" data-parallax="1" />
             <div className="flex flex-col items-center px-6 pt-[clamp(72px,10vw,150px)] pb-[clamp(48px,6vw,88px)] text-center">
               <h2 className="display max-w-[11ch]" data-split>
-                Raccontaci lo spazio.
+                Preventivo gratuito.
               </h2>
               <p className="lead mx-auto mt-7 text-gelo/80" data-reveal>
-                Una foto, due misure, l’indirizzo. Al resto pensiamo noi: sopralluogo e preventivo gratuiti, risposta entro un giorno lavorativo.
+                Sopralluogo incluso. Risposta entro un giorno lavorativo.
               </p>
               <div className="mt-9 flex flex-wrap justify-center gap-3" data-reveal>
                 <Button href={QUOTE_HREF} variant="brass" magnetic>

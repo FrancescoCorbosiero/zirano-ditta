@@ -61,7 +61,7 @@ export function ServiceIndex({ heading = true }: { heading?: boolean }) {
   return (
     <section className="section tone-paper">
       <div className="wrap">
-        {heading && <SectionHead align="split" title="Sei servizi," titleEnd="una squadra." />}
+        {heading && <SectionHead align="end" title="Servizi." />}
 
         <div data-hover-list className={`relative ${heading ? 'mt-[clamp(48px,6vw,88px)]' : ''}`}>
           <ul className="border-t border-[var(--line-strong)]" data-reveal="stagger">
@@ -182,7 +182,7 @@ export function Method() {
   return (
     <section className="section">
       <div className="wrap">
-        <SectionHead align="split" title="Quattro passaggi," titleEnd="nessuna sorpresa." />
+        <SectionHead align="split" title="Come lavoriamo," titleEnd="in quattro passaggi." />
 
         <div data-steps className="relative mt-[clamp(56px,7vw,104px)]">
           <div className="absolute left-[5px] top-0 h-full w-px bg-[var(--line)] lg:left-0 lg:top-[5px] lg:h-px lg:w-full">
@@ -212,7 +212,7 @@ export function FaqTeaser() {
         <div className="lg:order-2 lg:col-span-4 lg:text-right">
           <div className="lg:sticky lg:top-28">
             <h2 className="h2" data-split>
-              Prima di chiamarci.
+              Domande frequenti.
             </h2>
             <Link href="/faq" className="link-u mt-8" data-reveal>
               Tutte le domande <Arrow />

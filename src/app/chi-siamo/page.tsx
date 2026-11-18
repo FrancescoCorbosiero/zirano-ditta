@@ -16,10 +16,10 @@ export const metadata = pageMeta({
 
 /* Testi segnaposto: storia, valori e numeri vanno scritti con il cliente. */
 const VALUES = [
-  { title: 'Misurare due volte', text: 'Ogni lavoro parte da un rilievo. Ciò che si misura prima non si improvvisa dopo.' },
-  { title: 'Proteggere tutto', text: 'Pavimenti, spigoli, ascensori, parti comuni. Lasciamo gli spazi come li abbiamo trovati, o meglio.' },
+  { title: 'Rilievo', text: 'Ogni lavoro parte da un sopralluogo con le misure.' },
+  { title: 'Protezioni', text: 'Pavimenti, spigoli, ascensori e parti comuni coperti prima di iniziare.' },
   { title: 'Un solo referente', text: 'Dal preventivo alla consegna parli con la stessa persona.' },
-  { title: 'Dire le cose come stanno', text: 'Tempi e costi scritti. Se qualcosa cambia, lo sai prima.' },
+  { title: 'Tempi e costi scritti', text: 'Se qualcosa cambia, lo sai prima.' },
 ];
 
 const TIMELINE = [
@@ -33,8 +33,8 @@ const TIMELINE = [
 export default function ChiSiamoPage() {
   return (
     <>
-      <PageHero trail={[{ name: 'La ditta', href: '/chi-siamo' }]} title="Mani esperte, metodo da cantiere.">
-        <p className="lead">{SITE.name} è una squadra di traslocatori, montatori e installatori. Lavoriamo sugli spazi degli altri come se fossero i nostri.</p>
+      <PageHero trail={[{ name: 'La ditta', href: '/chi-siamo' }]} title="La ditta.">
+        <p className="lead">{SITE.name} è una squadra di traslocatori, montatori e installatori. Dal 2009.</p>
       </PageHero>
 
       <section className="tone-dark pb-[clamp(64px,8vw,120px)]">
@@ -74,7 +74,7 @@ export default function ChiSiamoPage() {
 
       <section className="section tone-paper">
         <div className="wrap">
-          <SectionHead align="end" title="Quattro regole che non cambiano." />
+          <SectionHead align="end" title="Come lavoriamo." />
           <ul className="mt-[clamp(48px,6vw,88px)] grid gap-px bg-[var(--line)] sm:grid-cols-2" data-reveal="stagger">
             {VALUES.map((v, i) => (
               <li key={v.title} className="bg-carta p-7 lg:p-10">
@@ -89,14 +89,14 @@ export default function ChiSiamoPage() {
 
       <section className="tone-dark section">
         <div className="wrap">
-          <SectionHead align="split" title="Quello che" titleEnd="possiamo contare." />
+          <SectionHead align="split" title="La ditta" titleEnd="in numeri." />
           <Figures className="mt-[clamp(48px,6vw,88px)]" />
         </div>
       </section>
 
       <section className="section tone-paper">
         <div className="wrap">
-          <SectionHead align="center" title="Chi ci ha già scelto." />
+          <SectionHead align="center" title="Clienti." />
           <ClientWall className="mt-[clamp(48px,6vw,88px)]" />
           <div className="mt-12 flex justify-center" data-reveal>
             <Button href={QUOTE_HREF} variant="brass" magnetic>

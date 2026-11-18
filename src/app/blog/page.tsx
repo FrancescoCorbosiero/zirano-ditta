@@ -16,8 +16,8 @@ export default function BlogPage() {
   const posts = allPosts();
   return (
     <>
-      <PageHero trail={[{ name: 'Guide', href: '/blog' }]} title="Quello che abbiamo imparato sul campo.">
-        <p className="lead">Consigli pratici per preparare un trasloco, montare bene un mobile, scegliere un deposito.</p>
+      <PageHero trail={[{ name: 'Guide', href: '/blog' }]} title="Guide.">
+        <p className="lead">Come preparare un trasloco, montare un mobile, scegliere un deposito.</p>
       </PageHero>
       <section className="section !pt-[clamp(48px,6vw,88px)]">
         <ul className="wrap border-t border-[var(--line-strong)]" data-reveal="stagger">

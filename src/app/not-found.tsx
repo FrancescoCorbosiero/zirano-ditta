@@ -9,10 +9,10 @@ export default function NotFound() {
           404
         </p>
         <h1 className="display mt-8" data-split>
-          Qui non c’è nessuna porta.
+          Pagina non trovata.
         </h1>
         <p className="lead mx-auto mt-7" data-hero-fade>
-          La pagina che cerchi è stata spostata, oppure non è mai esistita.
+          La pagina è stata spostata o non esiste.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3" data-hero-fade>
           <Button href="/" variant="brass">

@@ -22,7 +22,7 @@ const CHANNELS = [
 export default function ContattiPage() {
   return (
     <>
-      <PageHero trail={[{ name: 'Contatti', href: '/contatti' }]} title="Parliamo del tuo spazio.">
+      <PageHero trail={[{ name: 'Contatti', href: '/contatti' }]} title="Contatti.">
         <p className="lead">Telefono, WhatsApp o modulo: rispondiamo entro un giorno lavorativo.</p>
         <div>
           <Button href={QUOTE_HREF} variant="brass" magnetic>

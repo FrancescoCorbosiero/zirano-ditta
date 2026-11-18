@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Script from 'next/script';
 import Button from '@/components/ui/Button';
 import { SERVICES } from '@/lib/services';
 import { NAV, QUOTE_HREF, SITE } from '@/lib/site';
@@ -116,7 +117,7 @@ export default function SiteFooter() {
           <span>
             © {year} {SITE.legalName}
           </span>
-          <span className="flex gap-6">
+          <span className="flex flex-wrap items-center gap-x-6 gap-y-3">
             <Link href="/privacy" className="hover:text-gelo">
               Privacy
             </Link>
@@ -125,9 +126,14 @@ export default function SiteFooter() {
                 {s.label}
               </a>
             ))}
+            {/* Credito Alpacode: il link interno resta nell'HTML del server (backlink e ripiego senza JS) */}
+            <alpacode-badge lang="it" theme="dark">
+              <a href="https://alpacode.it/">Realizzato da Alpacode</a>
+            </alpacode-badge>
           </span>
         </div>
       </div>
+      <Script src="https://alpacode.it/badge.js" strategy="lazyOnload" />
     </footer>
   );
 }

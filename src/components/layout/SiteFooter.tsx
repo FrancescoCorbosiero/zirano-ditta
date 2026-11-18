@@ -2,7 +2,9 @@ import Link from 'next/link';
 import Script from 'next/script';
 import Button from '@/components/ui/Button';
 import { SERVICES } from '@/lib/services';
-import { NAV, QUOTE_HREF, SITE } from '@/lib/site';
+import { NAV, PROMISES, QUOTE_HREF, SITE } from '@/lib/site';
+import { media } from '@/lib/media';
+import Image from 'next/image';
 import { LogoMark } from './Logo';
 
 const year = new Date().getFullYear();
@@ -29,21 +31,37 @@ export default function SiteFooter() {
     <footer className="tone-dark relative overflow-hidden pb-[calc(env(safe-area-inset-bottom)+96px)] lg:pb-10">
       <div className="grid-plan grid-plan-c" />
       <div className="wrap relative">
-        {/* Invito finale, sull'asse centrale come la hero */}
-        <div className="flex flex-col items-center border-b border-[var(--line)] py-[clamp(96px,12vw,184px)] text-center">
-          <h2 className="display max-w-[11ch]" data-split>
-            Raccontaci lo spazio.
-          </h2>
-          <p className="lead mx-auto mt-7" data-reveal>
-            Sopralluogo e preventivo gratuiti. Rispondiamo entro un giorno lavorativo.
-          </p>
-          <div className="mt-9 flex flex-wrap justify-center gap-3" data-reveal>
-            <Button href={QUOTE_HREF} variant="brass" magnetic>
-              Richiedi un preventivo
-            </Button>
-            <Button href={SITE.phone.href} variant="line">
-              {SITE.phone.label}
-            </Button>
+        {/* Invito finale: la tavola del furgone sotto, il testo sull'asse centrale */}
+        <div className="pt-[clamp(72px,9vw,128px)] pb-[clamp(56px,7vw,96px)]">
+          <div className="cta-board frame">
+            <Image src={media('trasloco').src} alt="" fill sizes="100vw" unoptimized className="plx" data-parallax="1" />
+            <div className="flex flex-col items-center px-6 pt-[clamp(72px,10vw,150px)] pb-[clamp(48px,6vw,88px)] text-center">
+              <h2 className="display max-w-[11ch]" data-split>
+                Raccontaci lo spazio.
+              </h2>
+              <p className="lead mx-auto mt-7 text-gelo/80" data-reveal>
+                Una foto, due misure, l’indirizzo. Al resto pensiamo noi: sopralluogo e preventivo gratuiti, risposta entro un giorno lavorativo.
+              </p>
+              <div className="mt-9 flex flex-wrap justify-center gap-3" data-reveal>
+                <Button href={QUOTE_HREF} variant="brass" magnetic>
+                  Richiedi un preventivo
+                </Button>
+                <Button href={SITE.phone.href} variant="line">
+                  {SITE.phone.label}
+                </Button>
+              </div>
+            </div>
+            <div className="cta-promises bg-[rgb(11_13_15/0.6)]" data-reveal="stagger">
+              {PROMISES.map((p, i) => (
+                <div key={p.title} className="flex items-baseline gap-4">
+                  <span className="meta num text-[var(--accent)]">{String(i + 1).padStart(2, '0')}</span>
+                  <span>
+                    <span className="block text-[16px] font-[580] text-gelo">{p.title}</span>
+                    <span className="meta mt-1 block text-gelo-mute">{p.text}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -101,13 +119,18 @@ export default function SiteFooter() {
         </div>
 
         {/* Il nome a tutta larghezza: il logo chiude la pagina come un cartiglio. */}
-        <div className="flex items-end justify-center gap-[3vw] border-t border-[var(--line)] pt-10" aria-hidden>
+        <div
+          className="flex items-end justify-center gap-[0.34em] border-t border-[var(--line)] pt-12"
+          style={{ fontSize: 'min(11vw, 150px)' }}
+          aria-hidden
+        >
           <span data-draw className="shrink-0 text-gelo">
-            <LogoMark size={0} weight={1.1} className="!h-[13.5vw] !w-[13.5vw] max-h-[190px] max-w-[190px]" />
+            {/* Il marchio alto quanto le maiuscole: stessa riga, stesso peso visivo */}
+            <LogoMark size={0} weight={1.1} className="!h-[0.74em] !w-[0.74em]" />
           </span>
           <span
             className="select-none whitespace-nowrap font-[560] uppercase leading-[0.74] text-gelo"
-            style={{ fontSize: 'min(14.4vw, 205px)', fontStretch: '125%', letterSpacing: '-0.035em' }}
+            style={{ fontStretch: '125%', letterSpacing: '-0.035em' }}
           >
             Ziranu
           </span>

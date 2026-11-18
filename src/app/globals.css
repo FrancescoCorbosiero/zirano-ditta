@@ -349,16 +349,16 @@
 .legend { border-top: 1px solid var(--line-strong); }
 .legend-row {
   display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; column-gap: clamp(16px, 2.4vw, 40px);
-  padding-block: clamp(22px, 3.2vw, 44px); border-bottom: 1px solid var(--line);
+  padding-block: clamp(26px, 3vw, 40px) clamp(20px, 2.4vw, 32px); border-bottom: 1px solid var(--line);
 }
 .legend-row dt { display: flex; align-items: flex-end; gap: clamp(20px, 2.4vw, 40px); min-width: 0; }
 .legend-row dt > :first-child { flex: none; max-width: 16rem; }
 .legend-row .dim { flex: 1; display: none; }
 .legend-fig {
-  font-size: clamp(3rem, 10.5vw, 10.5rem); font-weight: 360; font-stretch: 104%; letter-spacing: -0.055em;
-  line-height: 0.8; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap;
+  font-size: clamp(2.75rem, 6.2vw, 6.25rem); font-weight: 380; font-stretch: 104%; letter-spacing: -0.045em;
+  line-height: 0.86; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap;
 }
-.legend-fig small { font-size: 0.32em; font-weight: 480; letter-spacing: -0.01em; margin-left: 0.12em; color: var(--accent); }
+.legend-fig small { font-size: 0.4em; font-weight: 480; letter-spacing: -0.01em; margin-left: 0.12em; color: var(--accent); }
 @media (min-width: 768px) {
   .legend-row .dim { display: block; margin-bottom: 0.55em; }
 }
@@ -607,3 +607,22 @@ html.motion [data-steps-line] { transform: scaleX(0) scaleY(0); }
   display: block !important; position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;
 }
 .quote-flow label:has(input:focus-visible) { outline: 2px solid var(--color-ottone); outline-offset: -2px; }
+
+/* =====================================================================
+   Invito finale — la tavola del furgone dietro, il testo sopra
+   ===================================================================== */
+.cta-board { position: relative; isolation: isolate; overflow: hidden; border: 1px solid var(--line); border-radius: var(--r); }
+.cta-board .plx { object-fit: cover; z-index: -2; }
+.cta-board::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(180deg, rgb(11 13 15 / 0.55) 0%, rgb(11 13 15 / 0.78) 55%, rgb(11 13 15 / 0.96) 100%),
+    radial-gradient(60% 60% at 50% 35%, transparent, rgb(11 13 15 / 0.5));
+}
+.cta-promises { display: grid; border-top: 1px solid var(--line); }
+.cta-promises > div { padding: 22px clamp(20px, 3vw, 36px); border-bottom: 1px solid var(--line); }
+@media (min-width: 768px) {
+  .cta-promises { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cta-promises > div { border-bottom: 0; }
+  .cta-promises > div + div { border-left: 1px solid var(--line); }
+}

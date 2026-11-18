@@ -372,7 +372,7 @@ function van(x) {
   s += `<path d="M${x + 560} ${y - 60} V${y - 360} H${x + 700} Q${x + 730} ${y - 360} ${x + 748} ${y - 330} L${x + 820} ${y - 200} Q${x + 840} ${y - 190} ${x + 840} ${y - 160} V${y - 60} Z" fill="#e9e6df"/>`;
   s += `<path d="M${x + 590} ${y - 330} H${x + 694} Q${x + 712} ${y - 330} ${x + 722} ${y - 312} L${x + 782} ${y - 204} H${x + 590} Z" fill="#2b3a44"/>`;
   s += rect(x, y - 140, 840, 12, INK) + rect(x + 40, y - 330, 180, 8, BRASS);
-  s += `<text x="${x + 40}" y="${y - 250}" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" letter-spacing="10" fill="${INK}">ZIRANO</text>`;
+  s += `<text x="${x + 40}" y="${y - 250}" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" letter-spacing="10" fill="${INK}">ZIRANU</text>`;
   s += `<text x="${x + 42}" y="${y - 208}" font-family="Arial, Helvetica, sans-serif" font-size="20" letter-spacing="9" fill="${INK}" opacity="0.6">ARREDI · TRASLOCHI</text>`;
   s += line(x + 560, y - 430, x + 560, y - 70, '#000', 2, 'opacity="0.2"');
   for (const cx of [x + 170, x + 690]) {

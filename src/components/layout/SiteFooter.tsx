@@ -109,7 +109,7 @@ export default function SiteFooter() {
             className="select-none whitespace-nowrap font-[560] uppercase leading-[0.74] text-gelo"
             style={{ fontSize: 'min(14.4vw, 205px)', fontStretch: '125%', letterSpacing: '-0.035em' }}
           >
-            Zirano
+            Ziranu
           </span>
         </div>
 

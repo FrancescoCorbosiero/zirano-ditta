@@ -141,7 +141,7 @@ export const WORKS: Work[] = [
     title: 'Sei mesi di custodia',
     service: 'depositi',
     tags: ['Deposito', 'Ristrutturazione', 'Inventario'],
-    place: 'Magazzino Zirano',
+    place: 'Magazzino Ziranu',
     year: 2024,
     cover: 'deposito',
     summary: 'Un appartamento intero a scaffale mentre il cantiere rifaceva pavimenti e impianti.',
@@ -150,7 +150,7 @@ export const WORKS: Work[] = [
       'A cantiere chiuso tutto è tornato a casa, stanza per stanza.',
     ],
     sheet: [
-      { label: 'Luogo', value: 'Magazzino Zirano' },
+      { label: 'Luogo', value: 'Magazzino Ziranu' },
       { label: 'Durata', value: '6 mesi' },
       { label: 'Colli', value: '212' },
       { label: 'Volume', value: '55 m³' },

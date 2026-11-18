@@ -1,4 +1,4 @@
-# Zirano Arredi — Servizi avanzati per Spazi e Proprietà
+# Ziranu Arredi — Servizi avanzati per Spazi e Proprietà
 
 Sito vetrina della ditta (traslochi, montaggio e smontaggio mobili, installazioni,
 smaltimenti, depositi) con raccolta delle richieste di preventivo.

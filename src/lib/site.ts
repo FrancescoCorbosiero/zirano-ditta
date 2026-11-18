@@ -7,9 +7,9 @@
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.example.it').replace(/\/$/, '');
 
 export const SITE = {
-  name: 'Zirano Arredi',
+  name: 'Ziranu Arredi',
   payoff: 'Servizi avanzati per Spazi e Proprietà',
-  legalName: 'Zirano Arredi S.r.l.', // segnaposto
+  legalName: 'Ziranu Arredi S.r.l.', // segnaposto
   description:
     'Traslochi, montaggio e smontaggio mobili, installazioni, smaltimenti e depositi. Una sola squadra per spostare, allestire e custodire ciò che dà valore ai tuoi spazi.',
   vat: 'IT00000000000', // segnaposto

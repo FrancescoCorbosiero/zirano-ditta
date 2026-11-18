@@ -54,7 +54,7 @@ export default function Logo({
           className="font-[620] uppercase"
           style={{ fontStretch: '125%', letterSpacing: '0.2em', fontSize: Math.max(13, size * 0.44), marginRight: '-0.2em' }}
         >
-          Zirano
+          Ziranu
         </span>
         <span className="mt-[5px] font-[540] uppercase opacity-60" style={{ fontStretch: '125%', fontSize: Math.max(8.5, size * 0.25), letterSpacing: '0.36em' }}>
           Arredi

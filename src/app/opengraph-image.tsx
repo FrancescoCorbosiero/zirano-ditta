@@ -17,7 +17,7 @@ export default function OpengraphImage() {
           <path d="M15 34a9 9 0 0 0-9-9" stroke="#b58a52" strokeWidth="1" />
         </svg>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <div style={{ fontSize: 132, fontWeight: 600, letterSpacing: 18, lineHeight: 1 }}>ZIRANO</div>
+          <div style={{ fontSize: 132, fontWeight: 600, letterSpacing: 18, lineHeight: 1 }}>ZIRANU</div>
           <div style={{ display: 'flex', alignItems: 'center', marginTop: 28, fontSize: 30, color: '#9ba1a7' }}>
             <div style={{ width: 14, height: 14, background: '#b58a52', marginRight: 20 }} />
             {SITE.payoff}

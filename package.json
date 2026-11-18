@@ -2,7 +2,7 @@
   "name": "zirano-ditta",
   "version": "0.1.0",
   "private": true,
-  "description": "Sito di Ziranu Arredi — Servizi avanzati per Spazi e Proprietà (Next.js + Konsta UI + GSAP).",
+  "description": "Sito di Ziranu Arredi — Traslochi, montaggi, installazioni (Next.js + Konsta UI + GSAP).",
   "engines": {
     "node": ">=22.12.0"
   },

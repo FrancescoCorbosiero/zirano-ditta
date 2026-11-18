@@ -8,7 +8,7 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.exampl
 
 export const SITE = {
   name: 'Ziranu Arredi',
-  payoff: 'Servizi avanzati per Spazi e Proprietà',
+  payoff: 'Traslochi, montaggi, installazioni',
   legalName: 'Ziranu Arredi S.r.l.', // segnaposto
   description:
     'Traslochi, montaggio e smontaggio mobili, installazioni, smaltimenti e depositi a Meda, in Brianza e a Milano. Una sola squadra.',

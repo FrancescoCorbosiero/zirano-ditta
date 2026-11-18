@@ -1,4 +1,4 @@
-# Ziranu Arredi — Servizi avanzati per Spazi e Proprietà
+# Ziranu Arredi — Traslochi, montaggi, installazioni
 
 Sito vetrina della ditta (traslochi, montaggio e smontaggio mobili, installazioni,
 smaltimenti, depositi) con raccolta delle richieste di preventivo.

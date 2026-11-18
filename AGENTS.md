@@ -10,7 +10,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Questo progetto
 
-Sito di **Ziranu Arredi — Servizi avanzati per Spazi e Proprietà** (nome provvisorio):
+Sito di **Ziranu Arredi — Traslochi, montaggi, installazioni** (nome provvisorio):
 vetrina dei lavori e raccolta di richieste di preventivo. Leggi prima `README.md`.
 
 - **Lingua**: testi del sito, commenti e messaggi di commit in italiano.

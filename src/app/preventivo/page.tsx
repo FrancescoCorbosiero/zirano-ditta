@@ -9,8 +9,8 @@ export const metadata = pageMeta({
   path: '/preventivo',
 });
 
-export default async function PreventivoPage({ searchParams }: { searchParams: Promise<{ servizio?: string }> }) {
-  const { servizio = '' } = await searchParams;
+// Il servizio scelto (?servizio=…) lo legge QuoteFlow nel browser: la pagina resta statica.
+export default function PreventivoPage() {
   return (
     <>
       <PageHero trail={[{ name: 'Preventivo', href: '/preventivo' }]} title="Preventivo.">
@@ -18,7 +18,7 @@ export default async function PreventivoPage({ searchParams }: { searchParams: P
       </PageHero>
       <section className="section !pt-[clamp(40px,5vw,72px)]">
         <div className="wrap">
-          <QuoteFlow service={servizio} />
+          <QuoteFlow />
           <ul className="mt-10 grid gap-px border border-[var(--line)] bg-[var(--line)] sm:grid-cols-3" data-reveal>
             {PROMISES.map((p) => (
               <li key={p.title} className="bg-gesso px-6 py-5">

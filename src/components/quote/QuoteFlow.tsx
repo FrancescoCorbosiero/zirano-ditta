@@ -129,12 +129,15 @@ export default function QuoteFlow({
   // La bozza resta nella scheda del browser: chiudere il popup non la perde.
   useEffect(() => {
     try {
+      // Sulla pagina /preventivo il servizio arriva da ?servizio=… (letto qui, così la pagina resta statica).
+      const fromUrl = variant === 'page' ? new URLSearchParams(window.location.search).get('servizio') : null;
+      const service = initial || (SERVICES.some((s) => s.slug === fromUrl) ? (fromUrl as QuoteDraft['service']) : '');
       const saved = JSON.parse(sessionStorage.getItem(STORE) || 'null') as QuoteDraft | null;
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- lettura una tantum da sessionStorage dopo l'idratazione
-      if (saved) setDraft((d) => ({ ...d, ...saved, service: initial || saved.service, privacy: false, website: '' }));
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- lettura una tantum da URL e sessionStorage dopo l'idratazione
+      if (saved || service) setDraft((d) => ({ ...d, ...saved, service: service || saved?.service || '', privacy: false, website: '' }));
     } catch {}
     restored.current = true;
-  }, [initial]);
+  }, [initial, variant]);
   useEffect(() => {
     if (!restored.current) return;
     try {
@@ -159,6 +162,12 @@ export default function QuoteFlow({
   const submit = async () => {
     setStatus('sending');
     setServerError('');
+    // Anteprima statica (npm run anteprima): non c'è un server a cui inviare.
+    if (process.env.NEXT_PUBLIC_ANTEPRIMA_STATICA === '1') {
+      setServerError("Questa è un'anteprima del sito: la richiesta non parte.");
+      setStatus('error');
+      return;
+    }
     try {
       const res = await fetch('/api/preventivo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(draft) });
       const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string; fields?: FieldErrors };

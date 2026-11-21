@@ -3,6 +3,7 @@ import { SITE } from '@/lib/site';
 
 export const alt = `${SITE.name} — ${SITE.payoff}`;
 export const size = { width: 1200, height: 630 };
+export const dynamic = 'force-static';
 export const contentType = 'image/png';
 
 /** Immagine di condivisione generata: il segno, il nome, il payoff. */

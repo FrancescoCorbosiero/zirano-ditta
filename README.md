@@ -11,7 +11,23 @@ npm install
 npm run dev      # http://localhost:3000
 npm run check    # tipi + lint
 npm run build
+npm run anteprima # sito statico in anteprima-netlify/ (Netlify Drop)
 ```
+
+## Anteprima statica (Netlify Drop)
+
+Per mostrare il sito senza server, trascinandolo su
+[app.netlify.com/drop](https://app.netlify.com/drop):
+
+```bash
+npm run anteprima
+```
+
+Crea `anteprima-netlify/`: è quella la cartella da trascinare. Con
+`npm run anteprima -- https://<nome>.netlify.app` canonical, sitemap e immagini
+per i social puntano all'indirizzo dell'anteprima. Senza server non c'è
+`/api/preventivo`: il modulo si compila fino in fondo ma all'invio avvisa che è
+un'anteprima. Funziona anche su Windows. Dopo, `npm run build` rifà la build normale.
 
 ## Il concetto: "Planimetria"
 

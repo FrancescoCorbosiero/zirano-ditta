@@ -4,6 +4,9 @@ import { SERVICES } from '@/lib/services';
 import { SITE_URL } from '@/lib/site';
 import { WORKS } from '@/lib/works';
 
+// Statico anche nell'anteprima senza server (output: 'export').
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const page = (path: string, priority: number) => ({ url: `${SITE_URL}${path}`, changeFrequency: 'monthly' as const, priority });
   return [

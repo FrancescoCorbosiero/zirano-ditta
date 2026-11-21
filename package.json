@@ -13,7 +13,8 @@
     "lint": "eslint .",
     "typecheck": "next typegen && tsc --noEmit",
     "check": "npm run typecheck && npm run lint",
-    "placeholders": "node scripts/placeholders.mjs"
+    "placeholders": "node scripts/placeholders.mjs",
+    "anteprima": "node scripts/anteprima-statica.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

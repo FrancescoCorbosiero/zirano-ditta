@@ -6,3 +6,7 @@ out
 next-env.d.ts
 *.tsbuildinfo
 .DS_Store
+
+# anteprima statica (scripts/anteprima-statica.mjs)
+/anteprima-netlify/
+/.api-in-pausa/
